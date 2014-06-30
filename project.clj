@@ -6,5 +6,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [clj-http "0.9.2"]
                  [org.clojure/java.jdbc "0.3.3"]
-                 [cheshire "5.3.1"]
-                 [org.postgresql/postgresql "9.3-1101-jdbc41"]])
+                 [org.postgresql/postgresql "9.3-1101-jdbc41"]]
+  :profiles {:uberjar {:aot [slackhog.core]
+                       :uberjar-name "slackhog.jar"}}
+  :main slackhog.core)
