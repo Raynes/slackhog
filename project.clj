@@ -8,6 +8,7 @@
                  [org.clojure/java.jdbc "0.3.3"]
                  [org.postgresql/postgresql "9.3-1101-jdbc41"]
                  [cheshire "5.3.1"]
+                 [org.clojure/tools.cli "0.3.1"]
                  [me.raynes/fs "1.4.6"]]
   :deploy-repositories {"releases" :clojars}
   :profiles {:uberjar {:aot [slackhog.core]
