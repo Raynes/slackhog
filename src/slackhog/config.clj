@@ -1,6 +1,7 @@
 (ns slackhog.config)
 
 (def config
+  "Token and db configuration."
   (let [user (System/getenv "PGUSER")
         pass (System/getenv "PGPASS")
         db {:subprotocol (or (System/getenv "SUBPROTOCOL")
