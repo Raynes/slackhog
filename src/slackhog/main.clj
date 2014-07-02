@@ -2,9 +2,10 @@
   (:gen-class)
   (:require [clojure.tools.cli :as cli]
             [slackhog.config :refer [config]]
-            [slackhog.slack :refer [update-messages]]))
+            [slackhog.slack :refer [backup]]))
 
 (defn -main [& args]
-  (update-messages (:db config)
-                   (:token config)
-                   args))
+  (backup (:db config)
+          (:token config)
+          args)
+  (System/exit 0))

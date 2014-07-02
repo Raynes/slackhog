@@ -4,6 +4,6 @@ CREATE TABLE messages (
   ts        TIMESTAMP,
   ts_suffix INT,
   text      TEXT,
-  username  VARCHAR,
+  id        VARCHAR,
   channel   VARCHAR
 );
