@@ -1,7 +1,9 @@
 DROP TABLE messages;
 CREATE TABLE messages (
-  ts       VARCHAR,
-  text     TEXT,
-  username VARCHAR,
-  channel  VARCHAR
+  raw_ts    VARCHAR,
+  ts        TIMESTAMP,
+  ts_suffix INT,
+  text      TEXT,
+  username  VARCHAR,
+  channel   VARCHAR
 );
