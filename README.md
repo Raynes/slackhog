@@ -1,7 +1,7 @@
 # slackhog
 
 A Clojure program for backing up your slack history. Supports channels, groups,
-and ims.
+and ims, as well as users and channels themselves (mappings of ids to names).
 
 ## Usage
 
@@ -11,13 +11,17 @@ lein uberjar
 
 This will create a jar that we can run.
 
+If this is the first time you're running, you should create the tables slackhog
+looks for. These are the `users`, `channels`, and `messages` tables. Create them
+using the sql files in `sql/`.
+
 ```
 export SUBNAME='//localhost:5432/slackhog'
 export PGUSER=user
 export PGPASSWORD=pass
 export SLACK_TOKEN=token
 
-java -jar target/slackhog.jar channels groups im
+java -jar target/slackhog.jar channels groups ims channel-ids user-ids
 ```
 
 Some notes:
@@ -26,9 +30,13 @@ Some notes:
 to change this.
 * `PGUSER` and `PGPASSWORD` default to no authentication.
 
-The arguments to the program are the kinds of things to fetch. This is any
-combination of `channels`, `groups`, and `im`. Note that `im` is inconsistently
-non-plural because Slack's API is inconsistently pluralized. :P
+### Things to backup
+
+* `channels`: Messages from all public channels.
+* `groups`: Messages from all private groups you're a part of.
+* `ims`: Messages from all private IM convos you're a part of.
+* `user-ids`: Populate the users table.
+* `channel-ids`: Populate the channels table.
 
 ## License
 
