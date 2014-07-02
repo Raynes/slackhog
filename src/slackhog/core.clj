@@ -4,11 +4,15 @@
             [slackhog.slack :refer [update-messages]]))
 
 (defn -main [& args]
-  (let [db {:subprotocol (or (System/getenv "SUBPROTOCOL")
-                             "postgres")
+  (let [user (System/getenv "PGUSER")
+        pass (System/getenv "PGPASSWORD")
+        db {:subprotocol (or (System/getenv "SUBPROTOCOL")
+                             "postgresql")
             :subname (or (System/getenv "SUBNAME")
-                         "//localhost:5432/slackhog")
-            :user (System/getenv "PGUSER")
-            :password (System/getenv "PGPASSWORD")}
+                         "//localhost:5432/slackhog")}
+        db (if (and user pass)
+             (merge db {:user user
+                        :password pass})
+             db)
         token (System/getenv "SLACK_TOKEN")]
     (update-messages db token args)))
