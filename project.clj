@@ -9,7 +9,7 @@
                  [org.postgresql/postgresql "9.3-1101-jdbc41"]
                  [cheshire "5.3.1"]
                  [me.raynes/fs "1.4.6"]]
-  :deploy-repositories {"releases" "clojars"}
+  :deploy-repositories {"releases" :clojars}
   :profiles {:uberjar {:aot [slackhog.core]
                        :uberjar-name "slackhog.jar"}}
   :main slackhog.core)
