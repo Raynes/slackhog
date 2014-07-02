@@ -28,7 +28,7 @@ Some notes:
 
 * `SUBNAME` defaults to the above. It was included merely as an example of hor
 to change this.
-* `PGUSER` and `PGPASSWORD` default to no authentication.
+* `PGUSER` and `PGPASS` default to no authentication.
 
 ### Things to backup
 
