@@ -1,4 +1,4 @@
-(ns slackhog.core
+(ns slackhog.main
   (:gen-class)
   (:require [clojure.tools.cli :as cli]
             [slackhog.slack :refer [update-messages]]))

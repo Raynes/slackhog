@@ -11,6 +11,6 @@
                  [org.clojure/tools.cli "0.3.1"]
                  [me.raynes/fs "1.4.6"]]
   :deploy-repositories {"releases" :clojars}
-  :profiles {:uberjar {:aot [slackhog.core]
+  :profiles {:uberjar {:aot [slackhog.main]
                        :uberjar-name "slackhog.jar"}}
-  :main slackhog.core)
+  :main slackhog.main)
