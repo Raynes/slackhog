@@ -1,4 +1,4 @@
-(defproject slackhog "0.1.1"
+(defproject slackhog "0.2.0-SNAPSHOT"
   :description "Back up slack messages."
   :url "https://github.com/Raynes/slackhog"
   :license {:name "Eclipse Public License"
