@@ -18,7 +18,7 @@ using the sql files in `sql/`.
 ```
 export SUBNAME='//localhost:5432/slackhog'
 export PGUSER=user
-export PGPASSWORD=pass
+export PGPASS=pass
 export SLACK_TOKEN=token
 
 java -jar target/slackhog.jar channels groups ims channel-ids user-ids
